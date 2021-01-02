@@ -1,0 +1,16 @@
+
+
+server:
+  port: 9090
+
+debug: true
+
+
+# 配置spring-logging 原生默认日志
+logging:
+#  level: info
+  file:
+    clean-history-on-start: true
+    path: log
+    name: mylog.log
+
