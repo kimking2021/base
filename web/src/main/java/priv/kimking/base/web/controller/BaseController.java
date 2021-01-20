@@ -33,6 +33,11 @@ public class BaseController {
         return "hello";
     }
 
+    @GetMapping("/foo")
+    public String foo() {
+        return "foo";
+    }
+
     @GetMapping("/path")
     public String getRequestParameter(@RequestParam String param) {
         System.out.println(param);
