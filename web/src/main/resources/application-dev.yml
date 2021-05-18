@@ -3,7 +3,7 @@
 server:
   port: 9090
 
-debug: true
+debug: false
 
 
 # 配置spring-logging 原生默认日志
@@ -14,3 +14,6 @@ logging:
     path: log
     name: mylog.log
 
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

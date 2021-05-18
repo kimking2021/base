@@ -3,6 +3,8 @@ package priv.kimking.base.web.controller;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.HandlerMapping;
+import priv.kimking.base.web.aop.annotation.ExcelResp;
+import priv.kimking.base.web.entity.Foo;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -34,8 +36,13 @@ public class BaseController {
     }
 
     @GetMapping("/foo")
-    public String foo() {
-        return "foo";
+//    @ExcelResp
+    public Foo foo(@RequestBody Foo foo) {
+        System.out.println(foo);
+        Foo foo1 = new Foo();
+        foo1.setFooFoo("foofoo");
+        foo1.setFooBar("foo_bar");
+        return foo1;
     }
 
     @GetMapping("/path")
