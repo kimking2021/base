@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script>
+        // 设置 STOMP 客户端
+        var stompClient = null;
+        // 设置 WebSocket 进入端点
+        var SOCKET_ENDPOINT = "http://localhost:8080/endpoint?token=admin&tenant=T1";
+        // 设置订阅消息的请求前缀
+        var SUBSCRIBE_PREFIX = "/topic"
+        // 设置订阅消息的请求地址
+        var SUBSCRIBE = "";
+        // 设置服务器端点，访问服务器中哪个接口
+        var SEND_ENDPOINT = "/app/foo";
+
+        /* 进行连接 */
+        function connect() {
+            // 设置 SOCKET
+            var socket = new SockJS(SOCKET_ENDPOINT);
+            // 配置 STOMP 客户端
+            stompClient = Stomp.over(socket);
+            // STOMP 客户端连接
+            stompClient.connect({}, function (frame) {
+                alert("连接成功");
+            });
+        }
+
+        /* 订阅信息 */
+        function subscribeSocket(){
+            // 设置订阅地址
+            SUBSCRIBE = SUBSCRIBE_PREFIX + $("#subscribe").val();
+            // 输出订阅地址
+            alert("设置订阅地址为：" + SUBSCRIBE);
+            // 执行订阅消息
+            stompClient.subscribe(SUBSCRIBE, function (responseBody) {
+                var receiveMessage = JSON.parse(responseBody.body);
+                $("#information").append("<tr><td>" + receiveMessage.content + "</td></tr>");
+            });
+        }
+
+        /* 断开连接 */
+        function disconnect() {
+            stompClient.disconnect(function() {
+                alert("断开连接");
+            });
+        }
+
+        /* 发送消息并指定目标地址（这里设置的目标地址为自身订阅消息的地址，当然也可以设置为其它地址） */
+        function sendMessageNoParameter() {
+            // 设置发送的内容
+            var sendContent = $("#content").val();
+            // 设置待发送的消息内容
+            var message = '{"destination": "' + SUBSCRIBE + '", "content": "' + sendContent + '"}';
+            // 发送消息
+            var header = {Authorization: 'authInfo'}
+            stompClient.send(SEND_ENDPOINT, header, message);
+            // stompClient.send("test")
+        }
+    </script>
+</head>
+<body>
+<div id="main-content" class="container" style="margin-top: 10px;">
+    <div class="row">
+        <form class="navbar-form" style="margin-left:0px">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>WebSocket 连接：</label>
+                    <button class="btn btn-primary" type="button" onclick="connect();">进行连接</button>
+                    <button class="btn btn-danger" type="button" onclick="disconnect();">断开连接</button>
+                </div>
+                <label>订阅地址：</label>
+                <div class="form-group">
+                    <input type="text" id="subscribe" class="form-control" placeholder="订阅地址">
+                </div>
+                <button class="btn btn-warning" onclick="subscribeSocket();" type="button">订阅</button>
+            </div>
+        </form>
+    </div>
+    </br>
+    <div class="row">
+        <div class="form-group">
+            <label for="content">发送的消息内容：</label>
+            <input type="text" id="content" class="form-control" placeholder="消息内容">
+        </div>
+        <button class="btn btn-info" onclick="sendMessageNoParameter();" type="button">发送</button>
+    </div>
+    </br>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="page-header" style="font-weight:bold">接收到的消息：</h5>
+            <table class="table table-striped">
+                <tbody id="information"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
