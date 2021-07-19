@@ -23,6 +23,7 @@
         <module>core</module>
         <module>web</module>
         <module>websocket</module>
+        <module>compiler</module>
     </modules>
 
 
