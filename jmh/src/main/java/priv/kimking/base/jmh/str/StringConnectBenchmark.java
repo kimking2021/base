@@ -26,7 +26,7 @@ public class StringConnectBenchmark {
      */
     @Benchmark
     public void testStringAdd() {
-        print(new String()+ 1 + 2 + 3);
+        print("" + 1 + 2 + 3);
     }
 
     /**
@@ -34,7 +34,7 @@ public class StringConnectBenchmark {
      */
     @Benchmark
     public void testStringConcat() {
-        print(new String().concat("1").concat("2").concat("3"));
+        print("".concat("1").concat("2").concat("3"));
     }
 
     /**

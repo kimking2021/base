@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2020/11/23
  */
 public class CustPropertyValues {
-    private List<CustPropertyValue> propertyValues = new ArrayList<>();
+    private final List<CustPropertyValue> propertyValues = new ArrayList<>();
 
     public void addPropertyValue(CustPropertyValue propertyValue) {
         propertyValues.add(propertyValue);

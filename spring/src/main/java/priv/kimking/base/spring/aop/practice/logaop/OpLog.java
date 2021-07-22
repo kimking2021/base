@@ -24,7 +24,7 @@ public @interface OpLog {
 
      */
 
-    public String opType();
+    String opType();
 
     /**
 
@@ -34,7 +34,7 @@ public @interface OpLog {
 
      */
 
-    public String opItem();
+    String opItem();
 
     /**
 
@@ -44,6 +44,6 @@ public @interface OpLog {
 
      */
 
-    public String opItemIdExpression();
+    String opItemIdExpression();
 
 }

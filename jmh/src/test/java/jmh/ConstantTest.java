@@ -32,7 +32,7 @@ public class ConstantTest {
         new org.openjdk.jmh.runner.Runner(options).run();
     }
 
-    private double x = Math.PI;
+    private final double x = Math.PI;
 
     private final double x_final = Math.PI;
 

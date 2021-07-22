@@ -8,8 +8,8 @@ package priv.kimking.base.spring.aop.aspect;
  */
 public class AopCustomException extends RuntimeException{
 
-    private String code;
-    private String msg;
+    private final String code;
+    private final String msg;
 
     public AopCustomException(String code, String msg) {
         super(msg);

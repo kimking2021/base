@@ -9,9 +9,9 @@ package priv.kimking.base.spring.ioc.customizeioc.property;
 public class CustPropertyValue {
 
 
-    private String name;
+    private final String name;
 
-    private Object vaule;
+    private final Object vaule;
 
     public String getName() {
         return name;

@@ -8,7 +8,7 @@ package priv.kimking.base.spring.ioc.customizeioc.property;
  */
 public class CustBeanReference {
 
-    private String name;
+    private final String name;
 
     public String getName() {
         return name;

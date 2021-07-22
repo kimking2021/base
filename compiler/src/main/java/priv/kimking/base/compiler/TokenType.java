@@ -19,5 +19,5 @@ public enum TokenType {
     /**
      * 操作符
      */
-    Operator;
+    Operator
 }

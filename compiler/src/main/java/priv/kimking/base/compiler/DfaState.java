@@ -23,6 +23,6 @@ public enum DfaState {
     /**
      * 操作符状态
      */
-    Operator;
+    Operator
 
 }

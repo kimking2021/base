@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public class BeanValidator {
 
-    private static Validator validator = Validation.byProvider(HibernateValidator.class).configure().failFast(true)
+    private static final Validator validator = Validation.byProvider(HibernateValidator.class).configure().failFast(true)
 
             .buildValidatorFactory().getValidator();
 

@@ -18,12 +18,12 @@ public abstract class AbsCustBeanDefinitionReader implements CustBeanDefinitionR
     /**
      * 注册bean容器
      */
-    private CustResourceLoader resourceLoader;
+    private final CustResourceLoader resourceLoader;
 
     /**
      * 资源加载器
      */
-    private Map<String, CustBeanDefinition> registry;
+    private final Map<String, CustBeanDefinition> registry;
 
     /**
      * 构造器器必须有一个资源加载器， 默认插件创建一个map容器

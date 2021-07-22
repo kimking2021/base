@@ -33,7 +33,7 @@ public class JmhDECTest {
         new org.openjdk.jmh.runner.Runner(options).run();
     }
 
-    private double x = Math.PI;
+    private final double x = Math.PI;
 
     @Benchmark
     public void base() {

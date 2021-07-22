@@ -24,13 +24,14 @@
         <module>web</module>
         <module>websocket</module>
         <module>compiler</module>
+        <module>design-pattern</module>
     </modules>
 
 
     <properties>
         <lombok.version>1.18.12</lombok.version>
         <hutool.version>5.4.2</hutool.version>
-        <springboot.version>2.3.6.RELEASE</springboot.version>
+        <springboot.version>2.5.2</springboot.version>
     </properties>
 
 

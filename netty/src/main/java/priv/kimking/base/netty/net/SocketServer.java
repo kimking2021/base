@@ -16,7 +16,7 @@ public class SocketServer {
 
     public void start(int port) {
         //1.创建 ServerSocket 对象并且绑定一个端口
-        try (ServerSocket server = new ServerSocket(port);) {
+        try (ServerSocket server = new ServerSocket(port)) {
             //2.通过 accept()方法监听客户端请求， 这个方法会一直阻塞到有一个连接建立
             for (;;) {
                 final Socket socket = server.accept();

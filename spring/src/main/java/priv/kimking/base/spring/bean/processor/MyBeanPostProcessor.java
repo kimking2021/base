@@ -22,7 +22,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
         System.out.println("bean post process after initialization...");
 
         if (bean instanceof Student){
-            bean = (Student)bean;
+            bean = bean;
             ((Student) bean).setName("test:" + ((Student) bean).getName());
         }
         return bean;

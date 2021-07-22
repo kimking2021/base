@@ -10,7 +10,7 @@ import java.util.HashMap;
  */
 public abstract class AbsBeanFactory implements CustBeanFactory {
 
-    private HashMap<String, CustBeanDefinition> map = new HashMap<>();
+    private final HashMap<String, CustBeanDefinition> map = new HashMap<>();
 
     @Override
     public Object getBean(String name) throws Exception {
