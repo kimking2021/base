@@ -12,7 +12,7 @@
     <artifactId>web</artifactId>
 
     <properties>
-
+        <redisson-spring-boot-starter.version>3.16.0</redisson-spring-boot-starter.version>
     </properties>
 
     <dependencies>
@@ -46,6 +46,19 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--    redis 客户端    -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>${redisson-spring-boot-starter.version}</version>
+        </dependency>
+        <!--   lombok     -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
     </dependencies>
 
 

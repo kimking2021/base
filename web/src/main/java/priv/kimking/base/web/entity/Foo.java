@@ -1,6 +1,6 @@
 package priv.kimking.base.web.entity;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**

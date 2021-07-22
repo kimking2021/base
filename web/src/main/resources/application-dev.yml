@@ -6,13 +6,21 @@ server:
 debug: false
 
 
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 7
+
 # 配置spring-logging 原生默认日志
 logging:
 #  level: info
   file:
-    clean-history-on-start: true
     path: log
     name: mylog.log
+  logback:
+    rollingpolicy:
+      clean-history-on-start: true
 
 mybatis-plus:
   configuration:
