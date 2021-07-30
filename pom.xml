@@ -32,6 +32,9 @@
         <lombok.version>1.18.12</lombok.version>
         <hutool.version>5.4.2</hutool.version>
         <springboot.version>2.5.2</springboot.version>
+        <mysql-connector-java.version>8.0.23</mysql-connector-java.version>
+
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
 
 
@@ -71,16 +74,18 @@
                 <version>${springboot.version}</version>
             </dependency>
 
-<!--            netty      -->
+            <!--            netty      -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-webflux</artifactId>
                 <version>${springboot.version}</version>
             </dependency>
+
+            <!--     mysql connection       -->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <version>${springboot.version}</version>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
             </dependency>
 
         </dependencies>
@@ -91,6 +96,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
