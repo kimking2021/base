@@ -31,7 +31,7 @@ public class ExcelReturnValueHandler implements HandlerMethodReturnValueHandler 
 
     @Override
     public boolean supportsReturnType(MethodParameter methodParameter) {
-        System.out.println("HandlerMethodReturnValueHandler process true");
+        // System.out.println("HandlerMethodReturnValueHandler process true");
         return methodParameter.hasMethodAnnotation(ExcelResp.class);
     }
 

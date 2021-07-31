@@ -11,6 +11,11 @@ spring:
     host: 127.0.0.1
     port: 6379
     database: 7
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/base
+    username: root
+    password: 123456
 
 # 配置spring-logging 原生默认日志
 logging:
@@ -22,6 +27,16 @@ logging:
     rollingpolicy:
       clean-history-on-start: true
 
-mybatis-plus:
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: priv.kimking.base.web.mybatis.entity
+  #开启驼峰命名
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

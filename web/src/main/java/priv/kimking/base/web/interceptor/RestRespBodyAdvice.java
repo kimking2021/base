@@ -37,8 +37,8 @@ public class RestRespBodyAdvice implements ResponseBodyAdvice {
 
     @Override
     public boolean supports(MethodParameter methodParameter, Class httpMessageConverter) {
-        System.out.println("ResponseBodyAdvice support?");
-        log.info("{}, {}", methodParameter.getMethod().getName(), httpMessageConverter.getName());
+        // System.out.println("ResponseBodyAdvice support?");
+        // log.info("{}, {}", methodParameter.getMethod().getName(), httpMessageConverter.getName());
         return INTERCEPTER_METHOD_NAME.equals(methodParameter.getMethod().getName());
     }
 
