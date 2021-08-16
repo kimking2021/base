@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import priv.kimking.base.web.provider.RedissonProvider;
 
 /**
- * <p>
+ * <p> 分布式锁
  *
  * @author kim
  * @date 2021/7/19
