@@ -1,6 +1,8 @@
 package priv.kimking.base.web;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import priv.kimking.base.web.provider.RedissonProvider;
 
 /**
@@ -9,9 +11,9 @@ import priv.kimking.base.web.provider.RedissonProvider;
  * @author kim
  * @date 2021/7/19
  */
-@Slf4j
 public class DistributeLockThread extends Thread {
 
+    private static final Logger log = LoggerFactory.getLogger(DistributeLockThread.class);
 
     private static final String LOCK_KEY = "lockKey";
 

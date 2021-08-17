@@ -1,7 +1,7 @@
 package priv.kimking.base.web.interceptor;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +36,18 @@ public class RestRespBodyAdvice implements ResponseBodyAdvice<Object> {
         this.objectMapper = objectMapper;
     }
 
-    @SneakyThrows
     @Override
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class httpMessageConverter, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
 
         if (o instanceof String) {
             log.info("字符串返回");
-            return objectMapper.writeValueAsString(Result.success(o));
+            try {
+                return objectMapper.writeValueAsString(Result.success(o));
+            } catch (JsonProcessingException e) {
+                log.error("序列化异常： {}", e.getOriginalMessage());
+                // e.printStackTrace();
+                return Result.fail();
+            }
         }
         if (o instanceof Result) {
             return o;

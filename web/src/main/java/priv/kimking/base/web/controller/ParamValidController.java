@@ -1,6 +1,7 @@
 package priv.kimking.base.web.controller;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import priv.kimking.base.web.common.Result;
@@ -18,11 +19,12 @@ import javax.validation.groups.Default;
  * @author kim
  * @date 2021/8/11
  */
-@Slf4j
 @RestController
 @RequestMapping("/api/param")
 @Validated
 public class ParamValidController {
+
+    private static final Logger log = LoggerFactory.getLogger(ParamValidController.class);
 
     @GetMapping
     public Result<?> getParam() {

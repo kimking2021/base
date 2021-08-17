@@ -1,9 +1,10 @@
 package priv.kimking.base.web.provider;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -16,14 +17,20 @@ import org.springframework.stereotype.Service;
  * @author kim
  * @date 2021/7/19
  */
-@Slf4j
 @Service
-@AllArgsConstructor
 public class RedissonProvider {
+    
+    private static final Logger log = LoggerFactory.getLogger(RedissonProvider.class);
 
     private final RedissonClient redissonClient;
 
     private final StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    public RedissonProvider(RedissonClient redissonClient, StringRedisTemplate stringRedisTemplate) {
+        this.redissonClient = redissonClient;
+        this.stringRedisTemplate = stringRedisTemplate;
+    }
 
     public void demoDistributeLockByRedis(String lockKey) throws InterruptedException {
 

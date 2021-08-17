@@ -1,6 +1,5 @@
 package priv.kimking.base.web.mybatis.interceptor;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.plugin.*;
@@ -8,6 +7,8 @@ import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.Configuration;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
@@ -24,11 +25,12 @@ import java.util.Properties;
  * @author kim
  * @date 2021/7/29
  */
-@Slf4j
 // @Component
 @Intercepts(@Signature(type = Executor.class, method = "query",
         args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}))
 public class ExamplePlugin implements Interceptor {
+    
+    private static final Logger log = LoggerFactory.getLogger(ExamplePlugin.class);
 
     @Override
     public Object plugin(Object target) {
