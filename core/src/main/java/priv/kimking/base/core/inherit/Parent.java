@@ -8,11 +8,24 @@ package priv.kimking.base.core.inherit;
  */
 public class Parent {
 
-    public String FOO = "PARENT_FOO";
+    private String foo = "PARENT_FOO";
 
-    public String BAR = "PARENT_BAR";
+    private String bar = "PARENT_BAR";
 
-    public String plus() {
-        return FOO + "-" + BAR;
+    public String getFoo() {
+        return foo;
     }
+
+    public void setFoo(String foo) {
+        this.foo = foo;
+    }
+
+    public String getBar() {
+        return bar;
+    }
+
+    public void setBar(String bar) {
+        this.bar = bar;
+    }
+
 }

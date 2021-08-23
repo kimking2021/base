@@ -42,11 +42,11 @@ public class TargetProxy implements InvocationHandler {
         Target target = new Target();
         TargetProxy targetProxy = new TargetProxy(target);
 
-        ProxyUtils.generateClassFile(target.getClass(), "TargetProxyS");
+        // ProxyUtils.generateClassFile(target.getClass(), "TargetProxyS");
 
-        // ITarget proxy = (ITarget) targetProxy.createProxy();
-        // System.out.println(proxy.getClass().getName());
-        // proxy.say();
+        ITarget proxy = (ITarget) targetProxy.createProxy();
+        System.out.println(proxy.getClass().getName());
+        proxy.say();
 
     }
 
