@@ -43,7 +43,7 @@ public class Cglib2AopProxy implements AopProxy {
             System.out.println("CglibProxy 代理方法执行");
             CglibMethodInvocation invocation = new CglibMethodInvocation(advise.getTargetSource().getTarget(), method, objects, methodProxy);
             if (advise.getMethodMatcher().matches(method, advise.getTargetSource().getTarget().getClass())) {
-                advise.getMethodInterceptor().invoke(invocation);
+                return advise.getMethodInterceptor().invoke(invocation);
             }
             return invocation.proceed();
         }
