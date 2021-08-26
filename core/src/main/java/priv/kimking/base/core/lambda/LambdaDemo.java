@@ -8,18 +8,20 @@ package priv.kimking.base.core.lambda;
  */
 public class LambdaDemo {
 
-    public ILambda getLambda(String foo) {
-        String bar = "bar";
+    public ILambda getLambda(User bar) {
+        String foo = "foo";
         return () -> lambdaExpression(foo, bar);
     }
 
-    private String lambdaExpression(String foo, String bar) {
-        return foo + bar;
+    private String lambdaExpression(String foo, User user) {
+        return foo + user.getName();
     }
 
     public static void main(String[] args) {
+        User user = new User("kim");
         LambdaDemo demo = new LambdaDemo();
-        ILambda lambda = demo.getLambda("foo");
+        ILambda lambda = demo.getLambda(user);
+        user.setName("king");
         String result = lambda.lambdaCall();
         System.out.println(result);
     }
