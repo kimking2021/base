@@ -1,4 +1,4 @@
-package priv.kimking.base.spring;
+package priv.kimking.base.spring.whitelist;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

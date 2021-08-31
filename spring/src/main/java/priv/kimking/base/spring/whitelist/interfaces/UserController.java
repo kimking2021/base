@@ -1,4 +1,4 @@
-package priv.kimking.base.spring.interfaces;
+package priv.kimking.base.spring.whitelist.interfaces;
 
 import kim.kimking.middleware.whitelist.DoJoinPoint;
 import kim.kimking.middleware.whitelist.annotation.DoWhiteList;

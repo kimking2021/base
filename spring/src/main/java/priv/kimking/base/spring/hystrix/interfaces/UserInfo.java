@@ -1,4 +1,4 @@
-package priv.kimking.base.spring.interfaces;
+package priv.kimking.base.spring.hystrix.interfaces;
 
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 
