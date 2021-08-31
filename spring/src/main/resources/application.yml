@@ -1,0 +1,7 @@
+server:
+  port: 8088
+
+# 白名单用户
+kimking:
+  whitelist:
+    users: aaa,111,xiaofuge
