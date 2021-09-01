@@ -47,6 +47,12 @@
             <version>1.0.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>kim.kimking.middleware</groupId>
+            <artifactId>ratelimiter-spring-boot-starter</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
