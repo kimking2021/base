@@ -33,7 +33,7 @@
         <dependency>
             <groupId>kim.kimking.middleware</groupId>
             <artifactId>whitelist-spring-boot-starter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -44,7 +44,7 @@
         <dependency>
             <groupId>kim.kimking.middleware</groupId>
             <artifactId>hystrix-spring-boot-starter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.2</version>
         </dependency>
 
     </dependencies>
