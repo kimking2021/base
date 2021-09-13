@@ -6,11 +6,8 @@
  */
 public class Test {
 
-    @org.junit.Test
-    public void test() {
-        boolean b = ((Object) (Long.valueOf(-1L))).equals(-1L);
+    public static void main(String[] args) {
 
-        System.out.println(b);
     }
 
 }
