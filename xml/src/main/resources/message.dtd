@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Document Type Definition -->
+<!--第 1 行定义 note 元素有四个子元素："to, from, heading, body"。-->
+<!-- 第 2-5 行定义了 to, from, heading, body 元素的类型是 "#PCDATA"。-->
+
+<!DOCTYPE note[
+    <!ELEMENT note (from,to,title,body)>
+    <!ELEMENT to (#PCDATA)>
+    <!ELEMENT from (#PCDATA)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT body (#PCDATA)>
+]>

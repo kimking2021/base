@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<note xmlns="http://schema.kimking.kim/schema/note.xsd">
+    <to>king</to>
+    <from>kim</from>
+    <title>Reminder</title>
+    <body>Don't forget the meeting!</body>
+</note>

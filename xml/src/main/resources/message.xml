@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE note SYSTEM "message.dtd">
+<note>
+    <from>kim</from>
+    <to>king</to>
+    <title>Reminder</title>
+    <body>Don't forget the meeting!</body>
+</note>
