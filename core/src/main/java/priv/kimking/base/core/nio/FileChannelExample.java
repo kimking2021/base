@@ -30,8 +30,15 @@ public class FileChannelExample {
             // switch the buffer from writing mode into reading mode
             buffer.flip();
 
+            // rewind: sets the position back to 0, so you can reread all the data in the buffer
             // buffer.rewind();
+
+            // compact: copies all unread data to the beginning of the Buffer. Then it sets position to right after the last unread element.
+            // The limit property is still set to capacity, just like clear() does
+            // buffer.compact();
+
             // buffer.mark();
+
             // buffer.reset();
 
             while (buffer.hasRemaining()) {
