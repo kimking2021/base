@@ -25,6 +25,8 @@
         <module>compiler</module>
         <module>design-pattern</module>
         <module>xml</module>
+        <module>util</module>
+        <module>tools</module>
     </modules>
 
 
