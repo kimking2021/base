@@ -1,0 +1,6 @@
+server:
+  port: 9008
+
+spring:
+  application:
+    name: rpc-spring-boot-starter-test-consumer

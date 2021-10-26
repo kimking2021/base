@@ -9,6 +9,7 @@ kimking:
 # 自定义的配置有大小写的属性时会转换为中横线
 mybatis:
   datasource:
+    enable: true
     driver: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/bugstack?useUnicode=true
     username: root

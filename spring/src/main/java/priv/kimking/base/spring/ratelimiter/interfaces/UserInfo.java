@@ -1,6 +1,6 @@
 package priv.kimking.base.spring.ratelimiter.interfaces;
 
-import com.fasterxml.jackson.annotation.JsonIncludeProperties;
+// import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 
 /**
  * <p>
@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIncludeProperties;
  * @author kim
  * @date 2021/8/30
  */
-@JsonIncludeProperties(value = {"code", "info", "name", "age", "address"})
+// @JsonIncludeProperties(value = {"code", "info", "name", "age", "address"})
 public class UserInfo {
 
     private String code;
