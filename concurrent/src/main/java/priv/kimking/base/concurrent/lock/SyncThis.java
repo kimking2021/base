@@ -8,10 +8,19 @@ package priv.kimking.base.concurrent.lock;
  */
 public class SyncThis {
 
-    public void method() {
-        synchronized (this) {
+    private synchronized void method() throws InterruptedException {
+        System.out.println("sync method call");
+        Thread.sleep(3000);
+        anmethod();
+    }
 
-        }
+    private synchronized void anmethod() throws InterruptedException {
+        System.out.println("another sync method call");
+        Thread.sleep(1000);
+    }
+
+    public void callSync() throws InterruptedException {
+        method();
     }
 
 }
