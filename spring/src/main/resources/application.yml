@@ -1,0 +1,43 @@
+server:
+  port: 8088
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  config-location:  classpath:/mybatis/config/mybatis-config.xml
+
+# 路由配置
+router:
+  jdbc:
+    datasource:
+      dbCount: 2
+      tbCount: 4
+      list: db01,db02
+      db01:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/dbrouter01?useUnicode=true
+        username: root
+        password: 123456
+      db02:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/dbrouter02?useUnicode=true
+        username: root
+        password: 123456
+
+
+# 白名单用户
+kimking:
+  whitelist:
+    users: aaa,111,xiaofuge
+
+# 自定义的配置有大小写的属性时会转换为中横线
+#mybatis:
+#  datasource:
+#    enable: true
+#    driver: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/bugstack?useUnicode=true
+#    username: root
+#    password: 123456
+#    mapper-locations: classpath*:mapper/*.xml
+#    base-dao-package: priv.kimking.base.spring.mybatis.infrastructure.dao
+
+
