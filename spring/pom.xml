@@ -62,6 +62,11 @@
             <artifactId>db-router-spring-boot-starter</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>kim.kimking.middleware</groupId>
+            <artifactId>redis-spring-boot-starter</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
 
 
         <dependency>
