@@ -1,7 +1,8 @@
 
 ## java agent premain
-
+JavaAgent，是一种探针技术可以通过 premain 方法，在类加载的过程中给指定的方法进行字节码增强。
 Reference: [https://www.jianshu.com/p/0bbd79661080](https://www.jianshu.com/p/0bbd79661080)
+Reference: https://bugstack.cn/itstack-demo-agent
 
 参数 javaagent 可以用于指定一个 jar 包，并且对该 java 包有2个要求：
 
