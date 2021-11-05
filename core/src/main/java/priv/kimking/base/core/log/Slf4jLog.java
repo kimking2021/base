@@ -29,8 +29,16 @@ public class Slf4jLog {
         }
     }
 
+    public void logger() {
+        log.trace("this is trace log");
+        log.debug("this is debug log");
+        log.info("this is info log");
+        log.warn("this is warn log");
+        log.error("this is error log");
+    }
+
     public static void main(String[] args) {
-        new Slf4jLog().foo(0);
+        new Slf4jLog().logger();
     }
 
 }
