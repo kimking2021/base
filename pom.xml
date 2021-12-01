@@ -27,6 +27,7 @@
         <module>xml</module>
         <module>util</module>
         <module>tools</module>
+        <module>jvm</module>
     </modules>
 
 
@@ -134,6 +135,13 @@
                 <artifactId>jackson-annotations</artifactId>
                 <version>2.11.0</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.beust</groupId>
+                <artifactId>jcommander</artifactId>
+                <version>1.72</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
