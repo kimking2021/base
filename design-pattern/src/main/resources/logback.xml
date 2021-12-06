@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" debug="false">
+    <!--  读取环境变量 kim.log.dir  -->
+    <property name="LOG_DIR" value="pattern" />
+<!--    <property name="APP_name" value="coreModuleContext" />-->
+<!--    <contextName>${APP_name}</contextName>-->
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>utf-8</charset>
+		</encoder>
+        <!--   base/log/output.log     -->
+		<file>log/${LOG_DIR}/output.log</file>
+        <!--    每天生成一个日志文件，保存30天的日志文件。    -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/${LOG_DIR}/%d{yyyy-MM}/output.%d.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+	</appender>
+
+    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/${LOG_DIR}/info.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>log/${LOG_DIR}/%d{yyyy-MM, aux}/info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>20MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date [%thread] %-5level [%logger{50}] %file:%line - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<charset>utf-8</charset>
+		</encoder>
+        <!--   base/log/output.log     -->
+		<file>log/${LOG_DIR}/error.log</file>
+        <!--        按照固定窗口模式生成日志文件，当文件大于40MB时，生成新的日志文件。窗口大小是1到3，当保存了3个归档文件后，将覆盖最早的日志。  -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>log/${log_dir}/%d{yyyy-MM, aux}/error.%i.log.gz</fileNamePattern>
+            <minIndex>1</minIndex>
+　　　　　　　 <maxIndex>3</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>10MB</MaxFileSize>
+		</triggeringPolicy>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+        <appender-ref ref="ERROR_FILE" />
+	</root>
+
+</configuration>
